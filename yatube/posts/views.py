@@ -9,7 +9,7 @@ def index(request):
     # В словаре context отправляем информацию в шаблон
     context = {
         'posts': posts,
-
+        'title': 'Последние записи на сайте'
     }
     return render(request, template, context)
 
@@ -20,6 +20,7 @@ def group_posts(request, slug):
     context = {
         'posts': posts,
         'group': group,
+        'title': f'Записи сообщества {group}'
     }
     return render(request, 'posts/group_list.html', context)
 
